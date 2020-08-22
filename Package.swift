@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "LayoutDSL",
 	platforms: [
-		.iOS(.v11), .tvOS(.v11)
+		.iOS(.v11), .tvOS(.v11), .macOS(.v10_15)
 	],
     products: [
         .library(

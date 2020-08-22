@@ -6,6 +6,8 @@
 //  Copyright © 2019 Saeed Taheri. All rights reserved.
 //
 
+#if canImport(UIKit)
+
 import UIKit
 
 infix operator =*
@@ -13,76 +15,78 @@ infix operator <*
 infix operator >*
 
 public func =*<A: LayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    return (lhs, rhs)
+	return (lhs, rhs)
 }
 
 public func <*<A: LayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    return (lhs, rhs)
+	return (lhs, rhs)
 }
 
 public func >*<A: LayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    return (lhs, rhs)
+	return (lhs, rhs)
 }
 
 public func +<A: LayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    return (lhs, rhs)
+	return (lhs, rhs)
 }
 
 public func -<A: LayoutAnchor>(lhs: A, rhs: CGFloat) -> (A, CGFloat) {
-    return (lhs, -rhs)
+	return (lhs, -rhs)
 }
 
 public func ==<A: LayoutAnchor>(lhs: LayoutProperty<A>,
-                                rhs: (A, CGFloat)) {
-    lhs.equal(to: rhs.0, offsetBy: rhs.1)
+								rhs: (A, CGFloat)) {
+	lhs.equal(to: rhs.0, offsetBy: rhs.1)
 }
 
 public func ==<A: LayoutAnchor>(lhs: LayoutProperty<A>, rhs: A) {
-    lhs.equal(to: rhs)
+	lhs.equal(to: rhs)
 }
 
 public func == (lhs: LayoutProperty<NSLayoutDimension>, rhs: CGFloat) {
-    lhs.equal(to: rhs)
+	lhs.equal(to: rhs)
 }
 
 public func =* (lhs: LayoutProperty<NSLayoutDimension>, rhs: (NSLayoutDimension, CGFloat)) {
-    lhs.equal(to: rhs.0, multiplier: rhs.1)
+	lhs.equal(to: rhs.0, multiplier: rhs.1)
 }
 
 public func =* (lhs: LayoutProperty<NSLayoutDimension>, rhs: (NSLayoutDimension, CGFloat, CGFloat)) {
-    lhs.equal(to: rhs.0, multiplier: rhs.1, constant: rhs.2)
+	lhs.equal(to: rhs.0, multiplier: rhs.1, constant: rhs.2)
 }
 
 public func >=<A: LayoutAnchor>(lhs: LayoutProperty<A>,
-                                rhs: (A, CGFloat)) {
-    lhs.greaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+								rhs: (A, CGFloat)) {
+	lhs.greaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 public func >=<A: LayoutAnchor>(lhs: LayoutProperty<A>, rhs: A) {
-    lhs.greaterThanOrEqual(to: rhs)
+	lhs.greaterThanOrEqual(to: rhs)
 }
 
 public func >= (lhs: LayoutProperty<NSLayoutDimension>, rhs: CGFloat) {
-    lhs.greaterThanOrEqual(to: rhs)
+	lhs.greaterThanOrEqual(to: rhs)
 }
 
 public func >* (lhs: LayoutProperty<NSLayoutDimension>, rhs: (NSLayoutDimension, CGFloat)) {
-    lhs.greaterThanOrEqual(to: rhs.0, multiplier: rhs.1)
+	lhs.greaterThanOrEqual(to: rhs.0, multiplier: rhs.1)
 }
 
 public func <=<A: LayoutAnchor>(lhs: LayoutProperty<A>,
-                                rhs: (A, CGFloat)) {
-    lhs.lessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+								rhs: (A, CGFloat)) {
+	lhs.lessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 public func <=<A: LayoutAnchor>(lhs: LayoutProperty<A>, rhs: A) {
-    lhs.lessThanOrEqual(to: rhs)
+	lhs.lessThanOrEqual(to: rhs)
 }
 
 public func <= (lhs: LayoutProperty<NSLayoutDimension>, rhs: CGFloat) {
-    lhs.lessThanOrEqual(to: rhs)
+	lhs.lessThanOrEqual(to: rhs)
 }
 
 public func <* (lhs: LayoutProperty<NSLayoutDimension>, rhs: (NSLayoutDimension, CGFloat)) {
-    lhs.lessThanOrEqual(to: rhs.0, multiplier: rhs.1)
+	lhs.lessThanOrEqual(to: rhs.0, multiplier: rhs.1)
 }
+
+#endif
